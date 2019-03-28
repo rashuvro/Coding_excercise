@@ -1,0 +1,12 @@
+class Solution:
+    def sortArrayByParity(self, b ):
+        a = []
+        c=[]   
+        for i in range(0,len(b)):
+             if b[i]%2==0:
+                a.append(b[i])
+             else:
+                c.append(b[i])
+        for i in range(0,len(c)):
+             a.append(c[i])
+        return a
