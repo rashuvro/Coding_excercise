@@ -1,0 +1,11 @@
+class Solution:
+    def arrayPairSum(self, a):
+        a.sort()
+        b=[]
+        for i in range(0,len(a)):
+            if i%2==0:
+                b.append(min(a[i],a[i+1]))
+        summation = 0
+        for i in range(0,len(b)):
+            summation=summation+b[i]
+        return summation
