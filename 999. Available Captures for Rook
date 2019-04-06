@@ -1,0 +1,48 @@
+class Solution:
+    def numRookCaptures(self, A):
+        row_num = len(A[0][::])
+        column_num = len(A[::][0])
+        x=0
+        y=0
+        count =0
+        for i in range(0,row_num):
+            for j in range(0,column_num):
+                if A[i][j] == 'R':
+                    x=i
+                    y=j
+        # condition 1 (from y to row_num)
+        for i in range(y,row_num):
+                if A[x][i] =='B':
+                    break
+                elif  A[x][i] =='p':
+                    count = count+1
+                    break
+                    
+        # condition 2 (from y-1 to 0)
+        z= y-1
+        while z != -1:
+            if A[x][z] =='B':
+                    break
+            elif  A[x][z] =='p':
+                    count = count+1
+                    break
+            z=z-1
+            
+        # condition 3 (from x-1 to 0)
+        w= x-1
+        while w != -1:
+            if A[w][y] =='B':
+                    break
+            elif  A[w][y] =='p':
+                    count = count+1
+                    break
+            w=w-1
+            
+        # condition 4 (from x to column_num)            
+        for i in range(x,column_num):
+                if A[i][y] =='B':
+                    break
+                elif  A[i][y] =='p':
+                    count = count+1
+                    break
+        return count
