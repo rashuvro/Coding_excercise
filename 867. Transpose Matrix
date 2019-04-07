@@ -1,0 +1,9 @@
+class Solution:
+    def transpose(self,a):
+        numrows = len(a)    # 3 rows in your example
+        numcols = len(a[0])
+        Matrix = [[0 for x in range(numrows)] for y in range(numcols)] 
+        for i in range (numrows):
+            for j in range(numcols):
+                Matrix[j][i] = a[i][j]
+        return Matrix
