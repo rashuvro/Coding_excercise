@@ -1,0 +1,22 @@
+class Solution:
+    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
+        
+        lst = []
+        for i in range(num_people):
+            lst.append(0)
+        counter = 0
+        val = 1
+        while candies >0:
+            if (candies<val):
+                lst[counter] = lst[counter]+candies
+                break
+            else:
+                lst[counter] = lst[counter]+val
+                candies = candies - val
+                val = val+1
+                counter = counter +1 
+            if(counter==num_people):
+                counter=0
+        return lst
+    
+        
